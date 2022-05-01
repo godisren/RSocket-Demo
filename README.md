@@ -1,9 +1,9 @@
 
 # Introduction
 
-This tutorial refers to Mark Heckler's [vedio](https://www.youtube.com/watch?v=WJuMkgxDyEA&list=LL&index=2) about introducing the RSocket in transporting data. TODO short introduction about author
+This tutorial refers to Mark Heckler's [vedio](https://www.youtube.com/watch?v=WJuMkgxDyEA&list=LL&index=2) about introducing the RSocket in transporting data. Mark Heckler is architect, developer and the author of `Spring Boot Up & Running`.
 
-In this project, I just practiced by following Mark Heckler's instructions to clearly understand how the RSocket works and run in my local environment. I drawed the system architecture diagram based on the vedio as below to know where we are and how services to communicate with each other.
+In my project, I just practiced by following Mark Heckler's instructions to clearly understand how the RSocket works and run in my local environment. I drawed the system architecture diagram based on the vedio illustration as below to know where we are and how services to communicate with each other.
 
 ![RSocket Demo](./images/rsocket_demo.png)
 
@@ -86,7 +86,7 @@ aircraft:Aircraft(callsign=SAL417, reg=N02174, flightno=SAL417, type=PA28, altit
 ```
 As we can see, the **thing2** can fetch data from **thing1** over Websocket via RSocket.
 
-3. Launch thing3
+4. Launch thing3
 ```shell
 cd thing3
 mvn spring-boot:run
