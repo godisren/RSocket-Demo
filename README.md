@@ -68,8 +68,8 @@ mvn spring-boot:run
 logging :
 ```shell
 ...
-2022-05-01 22:40:48.987  INFO 5888 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7634
-2022-05-01 22:40:48.999  INFO 5888 --- [           main] o.s.b.rsocket.netty.NettyRSocketServer   : Netty RSocket started on port(s): 7635
+2022-05-01 22:40:48.987  INFO 5888 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 9090
+2022-05-01 22:40:48.999  INFO 5888 --- [           main] o.s.b.rsocket.netty.NettyRSocketServer   : Netty RSocket started on port(s): 9091
 ```
 
 3. Launch thing2
