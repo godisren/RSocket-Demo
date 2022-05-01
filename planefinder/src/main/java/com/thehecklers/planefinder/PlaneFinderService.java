@@ -34,27 +34,29 @@ public class PlaneFinderService {
     public Flux<Aircraft> getAircraft() {
         List<Aircraft> positions = new ArrayList<>();
 
-        try {
-            acConn = (HttpURLConnection) new URL("http://192.168.1.139/ajax/aircraft").openConnection();
-            acConn.setConnectTimeout(1000);
-
-            JsonNode aircraftNodes = om.readTree(acConn.getInputStream())
-                    .get("aircraft");
-
-            aircraftNodes.iterator().forEachRemaining(node -> {
-                try {
-                    positions.add(om.treeToValue(node, Aircraft.class));
-                } catch (JsonProcessingException e) {
-                    e.printStackTrace();
-                }
-            });
-        } catch (IOException e) {
-            //e.printStackTrace();
-            System.out.println("\n>>> IO Exception: " + e.getLocalizedMessage() +
-                    ", generating and providing sample data.\n");
-            return repo.deleteAll()
-                    .thenMany(saveSamplePositions());
-        }
+        // Because it cannot connect to the original data seed in our local environment.
+        // so we commented the related code and just run auto-generate sample data.
+//        try {
+//            acConn = (HttpURLConnection) new URL("http://192.168.1.139/ajax/aircraft").openConnection();
+//            acConn.setConnectTimeout(1000);
+//
+//            JsonNode aircraftNodes = om.readTree(acConn.getInputStream())
+//                    .get("aircraft");
+//
+//            aircraftNodes.iterator().forEachRemaining(node -> {
+//                try {
+//                    positions.add(om.treeToValue(node, Aircraft.class));
+//                } catch (JsonProcessingException e) {
+//                    e.printStackTrace();
+//                }
+//            });
+//        } catch (IOException e) {
+//            //e.printStackTrace();
+//            System.out.println("\n>>> IO Exception: " + e.getLocalizedMessage() +
+//                    ", generating and providing sample data.\n");
+//            return repo.deleteAll()
+//                    .thenMany(saveSamplePositions());
+//        }
 
         if (positions.size() > 0) {
             positions.forEach(System.out::println);

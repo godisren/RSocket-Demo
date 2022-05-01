@@ -25,12 +25,13 @@ public class Thing1Application {
         SpringApplication.run(Thing1Application.class, args);
     }
 
-    @Bean
-    WebClient client() {
-        // reactor code hooks
-        Hooks.onErrorDropped(e -> System.out.println("Client disconnect! Goodbye"));
-        return WebClient.create("http://127.0.0.1:7634/aircraft");
-    }
+    // If connect to planefinder via HTTP
+//    @Bean
+//    WebClient client() {
+//        // reactor code hooks
+//        Hooks.onErrorDropped(e -> System.out.println("Client disconnect! Goodbye"));
+//        return WebClient.create("http://127.0.0.1:7634/aircraft");
+//    }
 
     @Bean
     RSocketRequester requester(RSocketRequester.Builder builder) {
