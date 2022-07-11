@@ -21,7 +21,7 @@ RSocket also has other intraction modes (**Fire and Forget** and **Request/Respo
 
 # Launch
 
-## Message Qeueu
+## Message Queue
 Launch the RabbitMQ
 ```shell
 docker run -d --hostname my-rabbit --name my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
